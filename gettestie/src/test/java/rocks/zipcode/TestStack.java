@@ -132,10 +132,20 @@ public class TestStack {
 
     @Test
     public void treeMapTest() {
-    }
-
-    @Test
-    public void stackTest() {
+        TreeMap<String, String> avengers = new TreeMap<>();
+        avengers.put("Tony Stark", "Iron Man");
+        avengers.put("Steve Rogers", "Captain America");
+        avengers.put("Natasha Romanoff", "Black Widow");
+        avengers.put("CLint Barns", "Hawkeye");
+        avengers.put("Bruce Banner", "Hulk");
+        avengers.put("Thor Odinson", "Thor");
+        System.out.println("Avengers size: " + avengers.size());
+        System.out.println("Avengers, Assemble!\n" + avengers);
+        Assert.assertFalse(avengers.containsKey("Peter Parker"));
+        Assert.assertFalse(avengers.containsValue("Spider-Man"));
+        System.out.println("Tony Stark is " + avengers.get("Tony Stark"));
+        Comparator<String> compare = (Comparator<String>) avengers.comparator();
+        System.out.println("Comparator is: " + compare);
     }
 
     @Test
