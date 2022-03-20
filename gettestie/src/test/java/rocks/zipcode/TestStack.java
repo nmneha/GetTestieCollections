@@ -106,11 +106,28 @@ public class TestStack {
         System.out.println("Cleared pokemon2: " + pokemon2);
         System.out.println(pokemon2.contains("charmander"));
         System.out.println(pokemon2.isEmpty());
+        Iterator pokemons = pokemon.iterator();
+        System.out.println("List of pokemon: ");
+        while (pokemons.hasNext()) {
+            System.out.println(pokemons.next());
+        }
     }
 
     @Test
     public void vectorTest() {
-
+        Vector<String> avatar = new Vector<String>();
+        avatar.add("earth");
+        avatar.add("air");
+        avatar.add("water");
+        avatar.add("fire");
+        avatar.add("metal");
+        System.out.println(avatar.capacity());
+        for (String element : avatar) {
+            System.out.println(element);
+        }
+        System.out.println(avatar);
+        avatar.remove(4);
+        System.out.println(avatar);
     }
 
     @Test
