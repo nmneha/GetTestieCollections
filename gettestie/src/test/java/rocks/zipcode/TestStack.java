@@ -77,22 +77,40 @@ public class TestStack {
         LinkedList flowers = new LinkedList();
         flowers.add("tulips");
         flowers.add(0, "lavender");
-        System.out.println("At index 0: " + flowers.get(0));
+        System.out.println("At index 0: " + flowers.peekFirst());
         System.out.println("At index 1: " + flowers.get(1));
         flowers.addLast("baby's breath");
         flowers.addFirst("lily of the valley");
         System.out.println("At the beginning: " + flowers.get(0));
         System.out.println("At the end: " + flowers.get(3));
-        System.out.println(flowers);
-
+        System.out.println("Before pop: " + flowers);
+        System.out.println(flowers.pop());
+        System.out.println("After pop: " + flowers);
+        flowers.push("lily of the valley");
+        flowers.push("quartz");
+        flowers.pop();
+        System.out.println("After push: " + flowers); //USES LIFO
     }
 
     @Test
     public void arrayDequeTest() {
+        ArrayDeque<String> pokemon = new ArrayDeque<>(3);
+        List<String> starters = new ArrayList<>(Arrays.asList("bulbasaur", "squirtle", "charmander"));
+        pokemon.addAll(starters);
+        System.out.println("Originals: " + pokemon);
+        pokemon.add("pikachu");
+        System.out.println("Added pikachu: " + pokemon);
+        ArrayDeque<String> pokemon2 = pokemon.clone();
+        System.out.println("Cloned pokemon: " + pokemon2);
+        pokemon2.clear();
+        System.out.println("Cleared pokemon2: " + pokemon2);
+        System.out.println(pokemon2.contains("charmander"));
+        System.out.println(pokemon2.isEmpty());
     }
 
     @Test
     public void vectorTest() {
+
     }
 
     @Test
