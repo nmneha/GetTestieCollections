@@ -2,6 +2,7 @@ package rocks.zipcode;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sun.lwawt.macosx.CSystemTray;
 
 import static org.junit.Assert.*;
 
@@ -63,16 +64,27 @@ public class TestStack {
         theExos.put("Kai", 88);
         theExos.put("Suho", 1);
         theExos.put("Jimin", 94);
+        System.out.println("Before: " + theExos.keySet());
         Assert.assertFalse(theExos.isEmpty());
         Integer number = theExos.get("Baekhyun");
         assertEquals(4, (int) number);
         theExos.remove("Jimin");
-        System.out.println(theExos.keySet());
+        System.out.println("After " + theExos.keySet());
     }
 
     @Test
     public void linkedListTest() {
-        LinkedList<String> flowers = new LinkedList<>();
+        LinkedList flowers = new LinkedList();
+        flowers.add("tulips");
+        flowers.add(0, "lavender");
+        System.out.println("At index 0: " + flowers.get(0));
+        System.out.println("At index 1: " + flowers.get(1));
+        flowers.addLast("baby's breath");
+        flowers.addFirst("lily of the valley");
+        System.out.println("At the beginning: " + flowers.get(0));
+        System.out.println("At the end: " + flowers.get(3));
+        System.out.println(flowers);
+
     }
 
     @Test
