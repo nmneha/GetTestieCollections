@@ -149,11 +149,25 @@ public class TestStack {
     }
 
     @Test
-    public void treeSetTest() {
+    public void treeSetTest() { //autosorts ints (0 ->), strings (a ->)
+        TreeSet<Integer> nums = new TreeSet<>();
+        nums.add(1);
+        nums.add(45);
+        nums.add(36);
+        Integer number = 56;
+        System.out.println(nums.ceiling(number));
+        List<Integer> numList = new ArrayList<>(Arrays.asList(33, 98, 15, 74));
+        nums.addAll(numList);
+        System.out.println(nums);
+        System.out.println(nums.floor(number));
+        nums.pollFirst();
+        nums.pollLast();
+        System.out.println(nums);
     }
 
     @Test
     public void iteratorTest() {
+
     }
 
     @Test
