@@ -167,11 +167,16 @@ public class TestStack {
 
     @Test
     public void iteratorTest() {
-
+        List<String> bouquet = new ArrayList<>(Arrays.asList("lavender", "lilac", "lily", "rose", "daisy"));
+        Iterator<String> flower = bouquet.iterator();
+        while (flower.hasNext()) {
+            System.out.println(flower.next()+ " ");
+        }
     }
 
     @Test
     public void priorityQueueTest() {
+
     }
 
     @Test
