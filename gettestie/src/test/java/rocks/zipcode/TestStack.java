@@ -176,10 +176,39 @@ public class TestStack {
 
     @Test
     public void priorityQueueTest() {
-
+        PriorityQueue<String> outfit = new PriorityQueue<>();
+        outfit.add("Shirt");
+        outfit.add("Pants");
+        outfit.add("Shoes");
     }
 
     @Test
     public void comparableTest() {
+        ArrayList<Person> exo = new ArrayList<>();
+        Person bbh = new Person("Baekhyun", 1992);
+        Person kji = new Person("Jongin", 1994);
+        Person kms = new Person("Minseok", 1990);
+        Person pcy = new Person("Chanyeol", 1992);
+        Person dks = new Person("Kyungsoo", 1993);
+        Person osh = new Person("Sehun", 1994);
+        Person kjm = new Person("Junmyeon", 1991);
+
+        exo.add(bbh);
+        exo.add(kji);
+        exo.add(kms);
+        exo.add(pcy);
+        exo.add(dks);
+        exo.add(osh);
+        exo.add(kjm);
+
+        Collections.sort(exo, Person::compareTo);
+        Assert.assertEquals(bbh, exo.get(0));
+        Assert.assertEquals(pcy, exo.get(1));
+        Assert.assertEquals(kji, exo.get(2));
+        Assert.assertEquals(kjm, exo.get(3));
+        Assert.assertEquals(dks, exo.get(4));
+        Assert.assertEquals(kms, exo.get(5));
+        Assert.assertEquals(osh, exo.get(6));
+
     }
 }
